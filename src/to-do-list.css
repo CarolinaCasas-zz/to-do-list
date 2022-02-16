@@ -1,0 +1,23 @@
+html, body{
+    margin: 0px;
+}
+
+header{
+    margin:30px 0px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+li{
+display: flex;
+background-color: aqua;
+}
+.App-logo{
+width: 60%;    
+} 
+
+.to-do-list{
+    margin:20px 10px 0px 20px;
+}

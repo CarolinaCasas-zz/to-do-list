@@ -1,24 +1,24 @@
-import { useReducer, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import { taskReducer } from './components/taskReducer';
 import logo from './img/logo.png';
 import './to-do-list.css';
 
 
 function App() {
-  
+
   const initialState = [{
     id: new Date().getTime(),
     taskDescription: "hola",
     done: false,
   }]
-  
-  const [tasks, dispatch] = useReducer(taskReducer, initialState);
-  const [enterTask, setEnterTask]=useState({});
 
-  const handleInputChange=(event)=>{
-setEnterTask(
-  event.target.value
-)
+  const [tasks, dispatch] = useReducer(taskReducer, initialState);
+  const [enterTask, setEnterTask] = useState({});
+
+  const handleInputChange = (event) => {
+    setEnterTask(
+      event.target.value
+    )
   }
 
   const handleAddTask = (e) => {
@@ -38,6 +38,10 @@ setEnterTask(
     /*  console.log('nueva tarea'); */
   }
 
+  useEffect(()=>{
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+  },[tasks])
+
 
   return (
     <div className='to-do-list'>
@@ -46,8 +50,6 @@ setEnterTask(
       </header>
       <main>
         <p>{tasks.length}</p>
-
-        
         <form
           className='new-task'
           onSubmit={handleAddTask}>
@@ -57,8 +59,6 @@ setEnterTask(
             placeholder='Enter new task' />
           <button type='submit' value='submit'>Add</button>
         </form>
-
-
         <ul>
           {
             tasks.map(task =>

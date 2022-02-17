@@ -1,5 +1,8 @@
 html, body{
     margin: 0px;
+    background-image: url('img/back.png');
+   /*  background-repeat: no-repeat; */
+    background-size: cover;
 }
 
 header{
@@ -7,17 +10,72 @@ header{
 }
 
 ul{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     list-style-type: none;
+    padding-left: 0px;
+
+}
+[type='checkbox']{display: none;}
+
+label:before{
+    margin: 10px;
+    content:'';
+    border: solid 3px rgb(148, 148, 148);
+    border-radius: 5px;
+    width: 1.5em;
+    height: 1.5em;
+    left: 0px;
 }
 
+label{
+    font-size: 25px;
+}
+[type='checkbox']:checked + label:before{
+ border-color: #7EAFF9;
+ color:#7EAFF9;
+/*  background-color: #7EAFF9; */
+ position: absolute;
+ content: url("img/logo.png");
+}
+
+
 li{
+background-color: rgba(255, 255, 255, 0.74);
+border-radius: 0px 0px 10px 0px;
+margin: 20px  10px 20px 0px;
+width: 350px;
+height: 70px;
 display: flex;
-background-color: aqua;
+justify-content: space-between;
+align-items: center;
+-webkit-box-shadow: 1px -3px 14px 5px rgba(0, 0, 0, 0.301); 
+box-shadow: 1px -3px 14px 5px rgba(0, 0, 0, 0.39);
 }
 .App-logo{
 width: 60%;    
-} 
+}
 
+.trash{
+    margin-right: 15px;
+    width: 35px;
+}
+
+.trash:hover{
+    width: 50px;
+}
 .to-do-list{
     margin:20px 10px 0px 20px;
+}
+
+.message{
+    font-size: 25px;
+    text-align: center;
+}
+
+.principal-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

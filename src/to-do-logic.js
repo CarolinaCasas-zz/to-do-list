@@ -39,6 +39,16 @@ function App() {
 
   }
 
+  const checked =(taskId, checked)=>{
+  const action={
+   type:'check',
+   payload:taskId,
+   check: checked,
+ }
+
+ dispatch(action)
+  }
+
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks))
   }, [tasks])
@@ -52,13 +62,17 @@ function App() {
     dispatch(action)
   }
 
+
+
   return (
     <ToDoVisual
       enterTask={enterTask}
       tasks={tasks}
       handleAddTask={handleAddTask}
       handleInputChange={handleInputChange}
-      deleteTask={deleteTask} />
+      deleteTask={deleteTask} 
+      checked={checked}/>
+      
   )
 }
 

@@ -8,5 +8,5 @@ Agogo todo list es una aplicación web que tiene como objetivo ayudar al usuario
 -En la terminal, con el proyecto abierto escribir el comando npm start, esto abrirá el local host con el proyecto listo para usarse.
 
 ### Visita la página desplegada 
-
+https://youthful-mclean-f4eb41.netlify.app/
 
